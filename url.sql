@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50718
 File Encoding         : 65001
 
-Date: 2018-09-07 21:44:52
+Date: 2018-09-14 23:41:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -60,13 +60,27 @@ INSERT INTO `myblog` VALUES ('Maven引入本地Jar包并打包进War包中 - CSD
 DROP TABLE IF EXISTS `zhao_pin`;
 CREATE TABLE `zhao_pin` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `create_time` datetime DEFAULT NULL,
-  `title` varchar(255) DEFAULT NULL,
-  `url` varchar(255) DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
+  `url` varchar(255) NOT NULL,
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of zhao_pin
 -- ----------------------------
-INSERT INTO `zhao_pin` VALUES ('2', null, '猪八戒网-校园招聘', 'https://campus.zbj.com/');
+INSERT INTO `zhao_pin` VALUES ('2', '猪八戒网-校园招聘', 'https://campus.zbj.com/', '2018-09-07 21:48:19');
+INSERT INTO `zhao_pin` VALUES ('3', '中移物联网有限公司网申系统--招聘详细', 'http://iotchinamobile.zhiye.com/zpdetail/390167969', '2018-09-07 22:13:12');
+INSERT INTO `zhao_pin` VALUES ('4', '深圳市锐明技术股份有限公司网申系统--首页', 'http://streamax.zhiye.com/', '2018-09-07 22:15:32');
+INSERT INTO `zhao_pin` VALUES ('5', '应届校招 | 同程艺龙校园招聘', 'http://promotion.elong.com/index/cn/campus/yjszp.html?type=zpgw', '2018-09-07 22:15:32');
+INSERT INTO `zhao_pin` VALUES ('8', '京东校园招聘首页', 'http://campus.jd.com/home', '2018-09-07 22:15:32');
+INSERT INTO `zhao_pin` VALUES ('7', '中兴通讯全球招聘门户', 'http://job.zte.com.cn/', '2018-09-07 22:15:32');
+INSERT INTO `zhao_pin` VALUES ('9', '美团点评招聘官网', 'https://campus.meituan.com/resume-edit', '2018-09-07 22:15:32');
+INSERT INTO `zhao_pin` VALUES ('10', '成都尼毕鲁科技股份有限公司 - 加入我们', 'http://campus.tap4fun.com/#/?anchorName=007&sourceToken=&_k=mi6rlf', '2018-09-07 22:15:32');
+INSERT INTO `zhao_pin` VALUES ('11', '2019新华三和紫光华智联合招聘', 'http://campus.51job.com/H3C/job.html', '2018-09-07 22:15:32');
+INSERT INTO `zhao_pin` VALUES ('12', '360企业安全集团2019校园招聘-最新校招职位', 'http://chrcmp.chinahr.com/pages/360safe/jobs/#header', '2018-09-07 22:15:32');
+INSERT INTO `zhao_pin` VALUES ('13', '', 'http://zhaopin.fiberhome.com/', '2018-09-07 22:15:32');
+INSERT INTO `zhao_pin` VALUES ('14', '    顺丰科技', 'http://campus.sf-tech.com.cn/campusRecruitment/Jobinner1.html?p=32207860789', '2018-09-07 22:15:32');
+INSERT INTO `zhao_pin` VALUES ('15', '智者四海（北京）技术有限公司 - 加入我们', 'https://app.mokahr.com/campus_apply/zhihu', '2018-09-07 22:15:32');
+INSERT INTO `zhao_pin` VALUES ('20', '剑指Offer_编程题_牛客网', 'https://www.nowcoder.com/ta/coding-interviews', '2018-09-07 22:15:40');
+INSERT INTO `zhao_pin` VALUES ('18', '', '', '2018-09-07 22:15:05');

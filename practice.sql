@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50718
 File Encoding         : 65001
 
-Date: 2018-07-16 22:49:31
+Date: 2018-09-14 23:43:34
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,14 +24,14 @@ CREATE TABLE `area` (
   `name` varchar(255) DEFAULT NULL,
   `priority` int(11) DEFAULT NULL,
   `last_edit_time` datetime DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
+  `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of area
 -- ----------------------------
-INSERT INTO `area` VALUES ('1', '1', '1', '2018-06-14 15:53:12', '2018-06-14 15:53:14');
+INSERT INTO `area` VALUES ('1', '1', '1', '2018-08-14 16:42:17', '2018-08-14 16:39:18');
 
 -- ----------------------------
 -- Table structure for test
@@ -50,13 +50,11 @@ CREATE TABLE `test` (
   PRIMARY KEY (`id`),
   KEY `weight` (`weight`),
   CONSTRAINT `weight` FOREIGN KEY (`weight`) REFERENCES `test_copy` (`weight`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=223 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of test
 -- ----------------------------
-INSERT INTO `test` VALUES ('1', '11', '1', '1', '1', '1', '1', '1', '2018-03-05 17:59:21');
-INSERT INTO `test` VALUES ('1', '11', '1', '1', '1', '1', '1', '222', '2018-03-05 17:59:21');
 
 -- ----------------------------
 -- Table structure for test_copy
@@ -74,10 +72,8 @@ CREATE TABLE `test_copy` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`,`weight`),
   KEY `weight` (`weight`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of test_copy
 -- ----------------------------
-INSERT INTO `test_copy` VALUES ('1', '11', '1', '1', '1', '1', '1', '1', '2018-03-16 16:48:49');
-INSERT INTO `test_copy` VALUES ('2', '11', '2', '2', '2', '2', '2', '2', '2018-03-16 16:48:43');

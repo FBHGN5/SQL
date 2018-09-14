@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50718
 File Encoding         : 65001
 
-Date: 2018-08-27 20:53:00
+Date: 2018-09-14 23:41:18
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -34,17 +34,11 @@ CREATE TABLE `baojia` (
   KEY `id` (`id`),
   KEY `bid` (`bid`),
   CONSTRAINT `baojia_ibfk_2` FOREIGN KEY (`bid`) REFERENCES `buyinfo` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of baojia
 -- ----------------------------
-INSERT INTO `baojia` VALUES ('33', 'OA==', '2', '4', '-1', 'Mg==', 'Mg==', '2', '2', '2018-08-21 13:37:37');
-INSERT INTO `baojia` VALUES ('34', 'MjIz', '1', '14', '3', 'MQ==', 'MjIy', '1', '1', '2018-08-22 12:10:41');
-INSERT INTO `baojia` VALUES ('35', 'OA==', '2', '13', '3', 'Mg==', 'Mg==', '2', '2', '2018-08-22 12:12:44');
-INSERT INTO `baojia` VALUES ('36', 'Mg==', '1', '16', '3', 'MQ==', 'MQ==', '1', '1', '2018-08-23 09:21:20');
-INSERT INTO `baojia` VALUES ('37', 'NjA=', '10', '15', '3', 'Mw==', 'Mw==', '22', '2', '2018-08-27 20:43:03');
-INSERT INTO `baojia` VALUES ('39', 'OA==', '2', '17', '3', 'Mg==', 'Mg==', '2', '2', '2018-08-27 20:45:40');
 
 -- ----------------------------
 -- Table structure for baojia_gys
@@ -59,17 +53,11 @@ CREATE TABLE `baojia_gys` (
   KEY `baojia_gys_ibfk_1` (`bjid`),
   CONSTRAINT `baojia_gys_ibfk_1` FOREIGN KEY (`bjid`) REFERENCES `baojia` (`id`) ON DELETE CASCADE,
   CONSTRAINT `baojia_gys_ibfk_2` FOREIGN KEY (`gid`) REFERENCES `gys` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of baojia_gys
 -- ----------------------------
-INSERT INTO `baojia_gys` VALUES ('32', '33', '1');
-INSERT INTO `baojia_gys` VALUES ('33', '34', '1');
-INSERT INTO `baojia_gys` VALUES ('34', '35', '1');
-INSERT INTO `baojia_gys` VALUES ('35', '36', '1');
-INSERT INTO `baojia_gys` VALUES ('36', '37', '1');
-INSERT INTO `baojia_gys` VALUES ('38', '39', '1');
 
 -- ----------------------------
 -- Table structure for baojia_users
@@ -86,21 +74,11 @@ CREATE TABLE `baojia_users` (
   KEY `bid` (`bid`),
   CONSTRAINT `baojia_users_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `users` (`id`),
   CONSTRAINT `baojia_users_ibfk_2` FOREIGN KEY (`bid`) REFERENCES `buyinfo` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of baojia_users
 -- ----------------------------
-INSERT INTO `baojia_users` VALUES ('22', '12', '11', 'ok', '2018-08-21 12:37:38');
-INSERT INTO `baojia_users` VALUES ('23', '14', '11', 'ok', '2018-08-22 12:08:46');
-INSERT INTO `baojia_users` VALUES ('24', '13', '5', '1', '2018-08-22 12:09:04');
-INSERT INTO `baojia_users` VALUES ('25', '13', '2', 'w', '2018-08-22 12:09:21');
-INSERT INTO `baojia_users` VALUES ('26', '14', '8', '2', '2018-08-22 12:10:25');
-INSERT INTO `baojia_users` VALUES ('27', '15', '5', '12', '2018-08-23 09:19:30');
-INSERT INTO `baojia_users` VALUES ('28', '16', '11', '2', '2018-08-23 09:19:46');
-INSERT INTO `baojia_users` VALUES ('29', '15', '2', '2', '2018-08-23 09:20:09');
-INSERT INTO `baojia_users` VALUES ('30', '16', '8', 'w', '2018-08-23 09:20:45');
-INSERT INTO `baojia_users` VALUES ('31', '17', '5', '审核通过', '2018-08-27 20:40:17');
 
 -- ----------------------------
 -- Table structure for buyinfo
@@ -150,7 +128,7 @@ INSERT INTO `buyinfo` VALUES ('3', '7', '2', '2018-08-31', '2', '2-2018-08-14', 
 INSERT INTO `buyinfo` VALUES ('4', '1', '2', '2018-08-31', '2', '2-20180816110257002', '机器人1号', '2', '2017-08-16', '烟煤', '原煤', '2', '火车', '22.00', '2.00', '2', '2', '1.00', '-1.00', '2018-08-16', '2018-08-16', '2', '2', '一票结算', '到厂验收', '2', '2', '2', '2');
 INSERT INTO `buyinfo` VALUES ('6', '1', '2', '2018-08-31', '23', '20180817143504946', '机器人1号', '23', '2018-08-17', '烟煤', '原煤', '23', '火车', '23.00', '23.00', '23', '32', '1.00', '3.00', '2018-08-17', '2018-08-17', '23', '23', '一票结算', '到厂验收', '23', '2', '2', '2');
 INSERT INTO `buyinfo` VALUES ('8', '7', '2', '2018-08-31', '2', '20180818135230003', '机器人7号', '2', '2018-08-18', '烟煤', '原煤', '2', '火车', '2.00', '2.00', '22', '2', '-1.00', '-1.00', '2018-08-18', '2018-08-18', '2', '2', '一票结算', '到厂验收', '2', '2', '2', '2');
-INSERT INTO `buyinfo` VALUES ('11', '1', '1', '2018-08-31', '重庆邮电大学', '20180821101816214', '机器人1号', '邹桔林', '2018-08-21', '烟煤', '原煤', '2', '火车', '1.00', '2.00', '无', '结算方式', '1.00', '1.00', '2018-08-21', '2018-08-31', '邹桔林', '南岸区', '一票结算', '到厂验收', '2', '2', '2', '请尽快审批！');
+INSERT INTO `buyinfo` VALUES ('11', '1', '-1', '2018-08-31', '重庆邮电大学', '20180830103451019', '机器人1号', 'zjl', '2018-08-21', '烟煤', '原煤', '2', '火车', '1.00', '2.00', '无', '结算方式', '1.00', '1.00', '2018-08-21', '2018-08-31', 'zjl', '南岸区', '一票结算', '到厂第三方验收', '2', '2', '2', '请尽快审批！');
 INSERT INTO `buyinfo` VALUES ('12', '7', '2', '2018-08-31', '2', '20180821104849256', '机器人7号', '2', '2018-08-21', '烟煤', '原煤', '2', '火车', '2.00', '2.00', '2', '2', '-1.00', '-1.00', '2018-08-21', '2018-08-21', '2', '2', '一票结算', '到厂验收', '2', '2', '2', '2');
 INSERT INTO `buyinfo` VALUES ('13', '1', '2', '2018-08-25', '重庆煤电', '20180822110623615', '机器人1号', '2', '2018-08-22', '烟煤', '其它', '1', '船运', '2.00', '2.00', '1', '1', '1.00', '1.00', '2018-08-22', '2018-08-24', '2', '重庆', '二票结算', '到厂第三方验收', '1', '2', '3', '请尽快审核！');
 INSERT INTO `buyinfo` VALUES ('14', '7', '2', '2018-08-26', 'CQ', '20180822110834661', '机器人7号', '1', '2018-08-22', '烟煤', '原煤', '1', '火车', '1.00', '1.00', '1', '1', '-1.00', '-1.00', '2018-08-22', '2018-08-24', '2', '1', '铁路大票', '到厂验收', '1', '1', '1', '1');
@@ -173,26 +151,12 @@ CREATE TABLE `buyinfo_users` (
   KEY `bid` (`bid`),
   CONSTRAINT `buyinfo_users_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `users` (`id`),
   CONSTRAINT `buyinfo_users_ibfk_2` FOREIGN KEY (`bid`) REFERENCES `buyinfo` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of buyinfo_users
 -- ----------------------------
-INSERT INTO `buyinfo_users` VALUES ('7', '11', '1', '--', '2018-08-21 10:18:16');
-INSERT INTO `buyinfo_users` VALUES ('8', '12', '7', '--', '2018-08-21 10:48:49');
-INSERT INTO `buyinfo_users` VALUES ('9', '11', '2', 'quren', '2018-08-21 11:23:26');
-INSERT INTO `buyinfo_users` VALUES ('10', '12', '8', '2', '2018-08-21 11:25:35');
-INSERT INTO `buyinfo_users` VALUES ('11', '13', '1', '--', '2018-08-22 11:06:23');
-INSERT INTO `buyinfo_users` VALUES ('12', '14', '7', '--', '2018-08-22 11:08:34');
-INSERT INTO `buyinfo_users` VALUES ('13', '13', '2', 'q', '2018-08-22 11:09:26');
-INSERT INTO `buyinfo_users` VALUES ('14', '14', '8', '1', '2018-08-22 11:10:26');
-INSERT INTO `buyinfo_users` VALUES ('15', '15', '1', '--', '2018-08-23 09:12:52');
-INSERT INTO `buyinfo_users` VALUES ('16', '16', '7', '--', '2018-08-23 09:13:58');
-INSERT INTO `buyinfo_users` VALUES ('17', '15', '2', 'ok', '2018-08-23 09:14:22');
-INSERT INTO `buyinfo_users` VALUES ('18', '16', '8', '1', '2018-08-23 09:14:52');
-INSERT INTO `buyinfo_users` VALUES ('19', '11', '2', '2', '2018-08-23 11:59:05');
-INSERT INTO `buyinfo_users` VALUES ('20', '17', '1', '--', '2018-08-27 20:31:25');
-INSERT INTO `buyinfo_users` VALUES ('21', '17', '2', '确认审核', '2018-08-27 20:32:41');
+INSERT INTO `buyinfo_users` VALUES ('34', '11', '1', '--', '2018-08-30 10:34:51');
 
 -- ----------------------------
 -- Table structure for gys
@@ -284,7 +248,7 @@ INSERT INTO `mes` VALUES ('53', '你对订单号为<span>20180827203125081</span
 INSERT INTO `mes` VALUES ('54', '你报价的订单号为<span>20180823091252293</span>已经中标!!系统已经自动退还冻结的报价保证金<span>10.0</span>元', '4', '机器人3号', '1', '2018-08-27 20:43:03');
 INSERT INTO `mes` VALUES ('55', '你的订单号为<span>20180823091252293</span>已经有供应商报价成功!!系统已经自动缴纳履约保证金<span>272.0</span>元', '1', '机器人3号', '1', '2018-08-27 20:43:03');
 INSERT INTO `mes` VALUES ('56', '你报价的订单号为<span>20180827203125081</span>已经中标!!系统已经自动退还冻结的报价保证金<span>2.0</span>元', '4', '机器人3号', '1', '2018-08-27 20:45:40');
-INSERT INTO `mes` VALUES ('57', '你的订单号为<span>20180827203125081</span>已经有供应商报价成功!!系统已经自动缴纳履约保证金<span>2.0</span>元', '1', '机器人3号', '1', '2018-08-27 20:45:40');
+INSERT INTO `mes` VALUES ('57', '你的订单号为<span>20180827203125081</span>已经有供应商报价成功!!系统已经自动缴纳履约保证金<span>2.0</span>元', '1', '机器人3号', '0', '2018-08-30 20:45:40');
 
 -- ----------------------------
 -- Table structure for role
@@ -351,7 +315,7 @@ CREATE TABLE `users` (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1', '1', '1', '1', '机器人1号', '99998.00', '0.00', '2.00', '1');
+INSERT INTO `users` VALUES ('1', '1', '1', '1', '机器人1号', '100000.00', '0.00', '0.00', '1');
 INSERT INTO `users` VALUES ('2', '2', '2', '2', '机器人2号', '100000.00', '0.00', '0.00', '1');
 INSERT INTO `users` VALUES ('3', '3', '3', '3', '机器人3号', '100000.00', '0.00', '0.00', '1');
 INSERT INTO `users` VALUES ('4', '4', '4', '4', '机器人4号', '100000.00', '0.00', '0.00', null);
