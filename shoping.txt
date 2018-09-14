@@ -1,0 +1,113 @@
+
+/*查询一张表的数据*/
+select * from customer ; 
+
+insert into customer values (id,'八戒','123',20000,'15900015900');
+insert into customer (uname,upwd,amount,phone) values ('悟空','123',10000,'13800138000');
+
+-- update必须带where语句
+update customer set amount = amount - 100000 where id = 6;
+
+-- 修改密码为456的用户，把密码重置为123，并且余额+10000
+update customer set upwd = '123' , amount = amount + 10000
+where upwd = '456';
+
+-- 删除数据
+delete from customer where id = 18;
+
+delete from customer where id >= 13 and id <= 16;
+
+
+
+select * from customer; 
+
+-- 查询密码不是123的用户信息
+select * from customer where upwd != '123'
+-- 查询密码是123的用户信息，并且余额大于1W，少于5W的用户
+select * from customer where upwd = '123'
+and amount > 10000 and amount < 50000;
+
+-- 查询悟空买了什么商品
+select c.uname, o.sno, p.pname
+from orders o , customer c , products p , pro_ord po 
+where o.cid = c.id
+and c.uname = '八戒'
+and o.id = po.oid
+and p.id = po.pid
+
+-- 哪些用户买了金箍棒
+select c.uname, o.sno, p.pname
+from orders o , customer c , products p , pro_ord po 
+where o.cid = c.id
+and p.pname = '金箍棒'
+and o.id = po.oid
+and p.id = po.pid
+
+
+-- 查询悟空的订单
+-- 子查询
+select * from orders o
+where o.cid = 
+(
+	select id from customer 
+  where uname = '悟空'
+);
+
+-- 内联接
+select * from orders o , customer c
+where o.cid = c.id
+and c.uname = '悟空'
+
+select * from orders o
+INNER JOIN customer c
+on o.cid = c.id 
+where c.uname = '悟空';
+
+
+
+select * from orders ;
+-- 订单总条数
+select count(*) from orders ;
+
+-- 订单最小、最大、平均、总金额
+select min(price), max(price) , avg(price) , sum(price) 
+from orders ; 
+
+-- 统计每个用户的订单数量、总金额并显示用户名，用户余额
+-- 订单数量>2
+select c.uname, orderinfo.osum, orderinfo.sumprice, c.amount
+ from customer c , 
+(
+select count(*) osum , cid , sum(price) sumprice from orders 
+group by cid HAVING osum > 2
+) orderinfo
+where c.id = orderinfo.cid
+
+-- 查询没买过东西的用户信息
+select * from customer c
+where c.id 
+-- in
+ not in 
+(
+	select cid from orders group by cid
+);
+
+-- 左外链接
+select * from  
+customer c left OUTER JOIN orders o
+on c.id = o.cid
+
+-- like用法
+select * from customer 
+where phone like '159%'
+
+-- 排序ASC正序，DESC倒序
+select * from orders 
+where 1=1 
+order by stime desc, price desc
+
+
+
+
+
+

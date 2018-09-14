@@ -1,0 +1,41 @@
+select count(*) from orders;
+select min(price) from orders;
+select max(price) from orders;
+select avg(price),sum(price) from orders;
+-- 每个用户的订单数量,cid相同的有几条,注意前面只能出现group by后面的字段
+select count(*),cid,sum(price) from orders 
+group by cid;
+
+select *from customer order by money desc,id desc;
+-- 统计订单数量、总金额并显示用户名、用户余额
+select c.username,osum,sp,c.money from customer c,(select count(*)osum,cid,sum(price) sp from orders
+group by cid having osum>2)orderInfo where c.id=orderInfo.cid;
+-- 统计没有买过的
+select * from customer c where c.id not in(
+select cid from orders group by cid);
+
+
+
+select max(money) from customer;
+
+select count(*) ,sum(money) from customer c group by money having money>100;
+select count(*),cid,snu,sum(price) from orders 
+group by cid;
+
+select count(*)sump,pname from products p
+group by pname having sump>2;
+
+-- 查询用户 至少购买了2件商品 
+select count(*)sump,p.pname from products p group by pname having sump>2;
+-- 查询用户购买的商品
+select c.username,p.pname from orders o ,customer c,products p,pro_ord po
+where p.id=po.pid
+and po.oid=o.id
+and o.cid=c.id
+
+-- 列出用户名字还有商品
+select count(*)pronumber,c.username,p.pname from orders o ,customer c,products p,pro_ord po
+where p.id=po.pid
+and po.oid=o.id
+and o.cid=c.id
+group by pname having pronumber>2;

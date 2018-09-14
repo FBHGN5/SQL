@@ -1,0 +1,29 @@
+SELECT * from orders o where o.cid=
+(
+SELECT id from customer where username='八戒'
+);
+-- 内联接
+select o.id,o.price,o.snu,o.stime,o.cid from orders o 
+inner join customer c
+on o.cid=c.id
+where username='八戒';
+
+select *from orders o ,customer c
+where o.cid=c.id and c.username='八戒';
+
+select o.snu,c.username,p.pname from orders o ,customer c,products p,pro_ord po
+where o.cid=c.id 
+and c.username='八戒'
+and p.id=po.pid
+and o.id=po.oid;
+
+
+select c.username from orders o ,customer c,products p,pro_ord po
+where p.pname='耙子'
+and p.id=po.pid
+and po.oid=o.id
+and o.cid=c.id;
+-- 左外连接
+select * from customer c
+left OUTER join orders o
+on c.id=o.cid;
