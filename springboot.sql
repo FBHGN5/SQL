@@ -4,13 +4,13 @@ Navicat MySQL Data Transfer
 Source Server         : mysql
 Source Server Version : 50718
 Source Host           : localhost:3306
-Source Database       : ssm
+Source Database       : springboot
 
 Target Server Type    : MYSQL
 Target Server Version : 50718
 File Encoding         : 65001
 
-Date: 2018-10-24 16:00:05
+Date: 2018-11-02 21:45:24
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -72,6 +72,19 @@ INSERT INTO `blog` VALUES ('48', '123213java45t45', '   				 <p>请输入内容.
 INSERT INTO `blog` VALUES ('49', '富文本编辑器测试', '   				 <pre style=\"max-width:100%;overflow-x:auto;\"><code class=\"java hljs\" codemark=\"1\">@RequestMapping(\"/user/profile/userList\")\r\n	@ResponseBody\r\n	public ModelAndView userList(HttpSession session){\r\n		User loginUser = (User) session.getAttribute(\"loginUser\");\r\n		//System.out.println(loginUser);\r\n		ModelAndView mv = new ModelAndView();\r\n		mv.addObject(\"loginUser\",loginUser);\r\n		mv.setViewName(\"/user/profile/userList\");\r\n		return mv;\r\n</code></pre><h1>习近平：中国要变成一个强国，各方面都要强<img src=\"http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/0b/tootha_thumb.gif\"><img src=\"http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/c9/geili_thumb.gif\"></h1><font size=\"5\"><span>2月23日下午，习近平考察了北京新机场建设。北京新机场位于北京市南部，规划远期年客流吞吐量1亿人次、飞机起降<i><font face=\"Comic Sans MS\">量88万架次，已于2014年开工建设，2019年将建成并投入运营。</font></i></span></font><p><br></p>', '2017-02-25 22:01:29', 'admin', '1');
 INSERT INTO `blog` VALUES ('50', '', '   				 <div><h1>起点和方向<img src=\"http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/0b/tootha_thumb.gif\" style=\"font-size: 14px;\"><img src=\"http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/6e/panda_thumb.gif\" style=\"font-size: 14px;\"></h1><blockquote><p>在接下来的两章中，我们将从项目背景一直讨论到关键技术的实践。这其中既会包括各种技术也会包括产品和交互的思考。</p></blockquote><p><ol><li><font color=\"#008080\">项目的背景是，公司业务迅速扩张，有大量对内的系统页面需要搭建。而前端人力是瓶颈，所以我们希望能以服务化的方式输出前端能力，让公司内所有非前端出身但有编程能力的人都能使用这种服务快速地开发出较高质量的页面。 从产品角度来说，它的目标已经很明确了</font>：</li></ol></p><ul><li><font size=\"5\"><u>使用人群：非前端的开发者</u></font></li><li><font size=\"5\">要提供的服务：能以中上等开发速度开发出中上等可维护性页面的集成开发环境(以下简称开发环境)</font></li></ul><p><font size=\"5\">有了这个目标，我们就可以开始设计产品形态了。</font></p><p>页面分为视图和逻辑两部分，在目前组件化的大背景下，视图基本上可以等同于组件树。首先，什么样的页面编辑方式学习成本最低同时最快速？<strike>当然是所见即所得，拖拽或者编辑树型结构的数据这两种方式都可以接受。实际测试中拖拽最容易上手，熟悉了快捷键的情况下则编辑组件树更快。</strike></p><p>接着，怎样让用户编写页面逻辑既能学习成本低，又能保障质量？学习成本低意味着概念要少，或者都是用户已知的概念。保障质量这个概念比较大，我们可以从开发的两个阶段来考虑：</p><ul><li>一是开发时最好有保障，例如前端开发时的 eslint 加上编辑器提示就能很好地提前避免一些低级错误。</li><li>二是在开发完之后，代码应该“有迹可循”，无论是排查问题，还是扩展需求，都要让用户在头脑里第一时间就知道应该怎样写逻辑，写在哪里。也就意味着概念要完善，职责分明。同时，工具层面也可以有些辅助功能，例如传统编辑器的变量搜索等。</li></ul></div><p><br></p>', '2017-03-03 14:44:11', 'admin', '1');
 INSERT INTO `blog` VALUES ('51', '富文本测试', '   				 <p>code测试</p><pre style=\"max-width: 100%;\"><code class=\"java hljs\" codemark=\"1\"><span class=\"hljs-comment\">/**\r\n	 * 查看登录用户的所博客\r\n	 * <span class=\"hljs-doctag\">@param</span> userId 当前登录用户Id\r\n	 * <span class=\"hljs-doctag\">@param</span> page 当前页码\r\n	 * <span class=\"hljs-doctag\">@param</span> rows 每页记录数量\r\n	 * <span class=\"hljs-doctag\">@return</span> page对象\r\n	 */</span>\r\n	<span class=\"hljs-meta\">@RequestMapping</span>(value=<span class=\"hljs-string\">\"/user/blog_list\"</span>,method=RequestMethod.GET)\r\n	<span class=\"hljs-function\"><span class=\"hljs-keyword\">public</span> ModelAndView <span class=\"hljs-title\">selectAllByUserId</span><span class=\"hljs-params\">(Integer userId,@RequestParam(required = <span class=\"hljs-keyword\">false</span>,defaultValue=<span class=\"hljs-string\">\"1\"</span>)</span>Integer page,@<span class=\"hljs-title\">RequestParam</span><span class=\"hljs-params\">(required = <span class=\"hljs-keyword\">false</span>,defaultValue=<span class=\"hljs-string\">\"5\"</span>)</span>Integer rows)</span>{\r\n		ModelAndView mv = <span class=\"hljs-keyword\">new</span> ModelAndView();\r\n		PageHelper.startPage(page, rows);\r\n		List&lt;Blog&gt; list = blogService.selectAllbyUserId(userId, page, rows);\r\n		PageInfo&lt;Blog&gt; p = <span class=\"hljs-keyword\">new</span> PageInfo&lt;Blog&gt;(list);\r\n		mv.addObject(<span class=\"hljs-string\">\"page\"</span>, p);\r\n		mv.addObject(<span class=\"hljs-string\">\"userId\"</span>, userId);\r\n		mv.setViewName(<span class=\"hljs-string\">\"user/blog_list\"</span>);\r\n		<span class=\"hljs-keyword\">return</span> mv;\r\n	}</code></pre><p>文本测试：</p><p><b><u>这样，你就定义了一个变量a，这个变量除了有x和y两个公有成员外，还有两个add和mul两个函数（公有方法）。但是这样的定义方法的缺点有2条：</u></b></p><p>1<font color=\"#00ffff\">.批量生成对象很不方便，如果你var b=a;那么你每次修改b的成员，都会同时改掉a的</font><font color=\"#000000\" style=\"background-color: rgb(255, 0, 0);\">成员，因为JavaScript的引用机制</font></p><p></p><blockquote><p>2.如果每次生成对象需要自定义一些成员，都要写出相应的赋值操作，增加代码行数。</p></blockquote><p><br></p>', '2017-03-05 01:38:50', '123', '3');
+
+-- ----------------------------
+-- Table structure for hibernate_sequence
+-- ----------------------------
+DROP TABLE IF EXISTS `hibernate_sequence`;
+CREATE TABLE `hibernate_sequence` (
+  `next_val` bigint(20) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of hibernate_sequence
+-- ----------------------------
+INSERT INTO `hibernate_sequence` VALUES ('1');
 
 -- ----------------------------
 -- Table structure for log
@@ -202,7 +215,11 @@ CREATE TABLE `role_permission` (
   `id` int(20) NOT NULL AUTO_INCREMENT,
   `role_id` int(20) DEFAULT NULL,
   `permission_id` int(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `FKf8yllw1ecvwqy3ehyxawqa1qp` (`permission_id`),
+  KEY `FKa6jx8n8xkesmjmv6jqug6bg68` (`role_id`),
+  CONSTRAINT `FKa6jx8n8xkesmjmv6jqug6bg68` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`),
+  CONSTRAINT `FKf8yllw1ecvwqy3ehyxawqa1qp` FOREIGN KEY (`permission_id`) REFERENCES `permission` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -238,15 +255,15 @@ CREATE TABLE `user` (
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES ('1', 'admin', 'f8126060b2d18502e9eaa54c1f4332da', '2016-12-26', 'male', '34343@qw.com', '1', '2017-03-18 12:53:39');
-INSERT INTO `user` VALUES ('2', '张三', '342bdd486c5c46c3bc0d14d17c228def\r\n', '2017-03-21', 'male', '2132@123', '1', '2014-03-18 22:53:39');
-INSERT INTO `user` VALUES ('3', '李四', '123', '2017-03-06', 'male', 'trytyt@wqew', '1', '2011-03-18 22:53:39');
+INSERT INTO `user` VALUES ('2', '张三', '342bdd486c5c46c3bc0d14d17c228def', '2017-03-21', 'male', '2132@123', '1', '2014-03-18 22:53:39');
+INSERT INTO `user` VALUES ('3', '李四', 'd9231fb8dce64a6c4460f6594eaff66c', '2017-03-06', 'male', 'trytyt@wqew', '1', '2011-03-18 22:53:39');
 INSERT INTO `user` VALUES ('4', '王五', '123', '2018-03-08', 'Female', '1232132@123.com', '1', '2018-03-18 22:53:39');
 INSERT INTO `user` VALUES ('5', '李白', '123', '2018-03-23', 'Female', '232434@123.com', '1', '2018-03-18 22:53:39');
 INSERT INTO `user` VALUES ('6', 'Andrew', '123', '2017-03-21', 'male', '2132@123', '1', '2014-03-18 22:53:39');
-INSERT INTO `user` VALUES ('7', 'Lili', '123', '2017-03-06', 'male', 'trytyt@wqew', '0', '2011-03-18 22:53:39');
-INSERT INTO `user` VALUES ('8', 'jack', '123', '2018-03-08', 'Female', '1232132@123.com', '0', '2018-03-18 22:53:39');
-INSERT INTO `user` VALUES ('9', 'lucy', '123', '2018-03-23', 'Female', '232434@123.com', '0', '2018-03-18 22:53:39');
-INSERT INTO `user` VALUES ('10', 'Mike', '123', '2017-03-21', 'male', '2132@123', '0', '2014-03-18 22:53:39');
+INSERT INTO `user` VALUES ('7', 'Lili', 'f2047560c5d11f075e37b840a3e93903', '2017-03-06', 'male', 'trytyt@wqew', '0', '2011-03-18 22:53:39');
+INSERT INTO `user` VALUES ('8', 'jack', '5f18884b4d9164173a154b5e5183dcdc', '2018-03-08', 'Female', '1232132@123.com', '0', '2018-03-18 22:53:39');
+INSERT INTO `user` VALUES ('9', 'lucy', 'd13122b75ecd2fcdc9962530bd7aee54', '2018-03-23', 'Female', '232434@123.com', '0', '2018-03-18 22:53:39');
+INSERT INTO `user` VALUES ('10', 'Mike', '7e8fe16b9fbf5e59299af60bfa41024a', '2017-03-21', 'male', '2132@123', '0', '2014-03-18 22:53:39');
 INSERT INTO `user` VALUES ('11', 'Man', '123', '2017-03-06', 'male', 'trytyt@wqew', '1', '2011-03-18 22:53:39');
 INSERT INTO `user` VALUES ('12', 'Chilton', '0192023a7bbd73250516f069df18b500', '2018-03-08', 'Female', '1232132@123.com', '0', '2018-03-18 22:53:39');
 INSERT INTO `user` VALUES ('13', 'Micheal', '123', '2018-03-23', 'Female', '232434@123.com', '0', '2018-03-18 22:53:39');
@@ -261,7 +278,11 @@ CREATE TABLE `user_role` (
   `id` int(20) NOT NULL AUTO_INCREMENT,
   `user_id` int(20) DEFAULT NULL,
   `role_id` int(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `FKa68196081fvovjhkek5m97n3y` (`role_id`),
+  KEY `FK859n2jvi8ivhui0rl0esws6o` (`user_id`),
+  CONSTRAINT `FK859n2jvi8ivhui0rl0esws6o` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
+  CONSTRAINT `FKa68196081fvovjhkek5m97n3y` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=246 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -276,7 +297,7 @@ INSERT INTO `user_role` VALUES ('225', '3', '6');
 INSERT INTO `user_role` VALUES ('226', '3', '7');
 INSERT INTO `user_role` VALUES ('227', '3', '8');
 INSERT INTO `user_role` VALUES ('228', '3', '9');
-INSERT INTO `user_role` VALUES ('237', '2', '2');
+INSERT INTO `user_role` VALUES ('237', '2', '1');
 INSERT INTO `user_role` VALUES ('238', '2', '3');
 INSERT INTO `user_role` VALUES ('239', '2', '4');
 INSERT INTO `user_role` VALUES ('240', '2', '5');
