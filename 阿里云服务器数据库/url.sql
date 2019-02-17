@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50558
 File Encoding         : 65001
 
-Date: 2018-11-06 17:39:22
+Date: 2019-02-06 10:30:47
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -25,7 +25,7 @@ CREATE TABLE `myblog` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of myblog
@@ -48,6 +48,12 @@ INSERT INTO `myblog` VALUES ('Maven引入本地Jar包并打包进War包中 - CSD
 INSERT INTO `myblog` VALUES ('git push代码到远程服务器 - CSDN博客', 'https://blog.csdn.net/sinat_28729797/article/details/48709205', '53', '2018-09-14 23:00:23');
 INSERT INTO `myblog` VALUES ('JPA 注解 OneToMany和ManyToOne - a4562116的博客 - CSDN博客', 'https://blog.csdn.net/a4562116/article/details/47087171', '57', '2018-10-24 17:41:42');
 INSERT INTO `myblog` VALUES ('h2pl (How_2_Play_Life) · GitHub', 'https://github.com/h2pl', '58', '2018-10-26 02:24:40');
+INSERT INTO `myblog` VALUES ('得自由', 'https://devpnss.com/my/index/', '59', '2018-11-06 18:38:55');
+INSERT INTO `myblog` VALUES ('java实现短信验证码5分钟有效时间_java_脚本之家', 'https://www.jb51.net/article/143803.htm', '60', '2018-11-12 19:22:14');
+INSERT INTO `myblog` VALUES ('员工工资管理系统', 'https://fbhgn5.github.io/Bootstrap-manger/admin.html', '61', '2018-11-27 15:29:23');
+INSERT INTO `myblog` VALUES ('如何用Ps将模糊图片变清晰_电脑软件_百度经验', 'https://jingyan.baidu.com/album/ca41422f0b7c8e1eae99edb0.html?picindex=5', '62', '2019-01-14 20:37:48');
+INSERT INTO `myblog` VALUES ('微尘导航_综合性精品网址导航大全', 'https://vip.cococo.online/', '63', '2019-01-16 19:46:05');
+INSERT INTO `myblog` VALUES ('WIN10怎么彻底关闭win10的更新（家庭版笔记本）_百度经验', 'https://jingyan.baidu.com/article/636f38bb9f7b29d6b84610cf.html', '64', '2019-01-23 15:17:06');
 
 -- ----------------------------
 -- Table structure for zhao_pin
@@ -66,13 +72,9 @@ CREATE TABLE `zhao_pin` (
 -- ----------------------------
 INSERT INTO `zhao_pin` VALUES ('17', '2018-09-07 22:21:04', '猪八戒网-校园招聘', '	https://campus.zbj.com/');
 INSERT INTO `zhao_pin` VALUES ('3', '2018-09-07 22:16:55', '中移物联网有限公司网申系统--招聘详细', 'http://iotchinamobile.zhiye.com/zpdetail/390167969');
-INSERT INTO `zhao_pin` VALUES ('26', '2018-09-27 19:34:59', '浪潮集团招聘', 'http://career.inspur.com/campus2019/index.html');
 INSERT INTO `zhao_pin` VALUES ('8', '2018-09-07 22:16:55', '京东校园招聘首页', 'http://campus.jd.com/home');
-INSERT INTO `zhao_pin` VALUES ('27', '2018-09-27 19:35:19', '浪潮集团招聘', 'http://career.inspur.com/campus2019/index.html');
 INSERT INTO `zhao_pin` VALUES ('9', '2018-09-07 22:16:55', '美团点评招聘官网', 'https://campus.meituan.com/resume-edit');
 INSERT INTO `zhao_pin` VALUES ('10', '2018-09-07 22:16:55', '成都尼毕鲁科技股份有限公司 - 加入我们', 'http://campus.tap4fun.com/#/?anchorName=007&sourceToken=&_k=mi6rlf');
 INSERT INTO `zhao_pin` VALUES ('11', '2018-09-07 22:16:55', '2019新华三和紫光华智联合招聘', 'http://campus.51job.com/H3C/job.html');
 INSERT INTO `zhao_pin` VALUES ('15', '2018-09-07 22:16:55', '智者四海（北京）技术有限公司 - 加入我们', 'https://app.mokahr.com/campus_apply/zhihu');
 INSERT INTO `zhao_pin` VALUES ('16', '2018-09-07 22:16:55', '剑指Offer_编程题_牛客网', 'https://www.nowcoder.com/ta/coding-interviews');
-INSERT INTO `zhao_pin` VALUES ('18', '2018-09-08 16:05:53', 'CVTE个人中心', 'https://careers.cvte.com/zone/resume/applications');
-INSERT INTO `zhao_pin` VALUES ('22', '2018-09-13 20:46:33', '锐捷网络股份有限公司网申系统--首页', 'http://ruijie.zhiye.com/');

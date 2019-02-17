@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50558
 File Encoding         : 65001
 
-Date: 2018-11-06 17:38:39
+Date: 2019-02-06 10:29:58
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -41,8 +41,6 @@ CREATE TABLE `buycar` (
 INSERT INTO `buycar` VALUES ('/resources/img/c-g.jpg', '潮牌休闲运动风套头加厚夹克男秋冬季情侣夹棉连帽夹克刺绣宽松款', '745', '123456', '1', '35', '2018-04-08 13:30:05', '84', '3');
 INSERT INTO `buycar` VALUES ('/resources/img/c-e.jpg', '2017冬装新款韩版女装宽松显瘦中长款毛呢大衣茧型格子毛呢外套女', '1452', '123456', '1', '36', '2018-04-08 13:30:08', '9822', '5');
 INSERT INTO `buycar` VALUES ('/resources/img/c-i.jpg', '正品△韩国代购 早春款气质轻熟风优雅小格纹褶皱收腰风衣长外套', '1451', '123456', '1', '37', '2018-04-08 13:30:12', '100', '7');
-INSERT INTO `buycar` VALUES ('/resources/img/c-b.jpg', '2017秋冬装新款韩版羊绒双面呢子大衣女茧型短款小个子毛呢外套', '600', '1', '1', '38', '2018-08-27 16:10:42', '33', '2');
-INSERT INTO `buycar` VALUES ('/resources/img/c-c.jpg', '日系潮人街头工装夹克浮世绘翻领风衣外套港风复古教练夹克男女秋', '555', '1', '5', '39', '2018-09-28 17:58:07', '5551', '1');
 
 -- ----------------------------
 -- Table structure for hotsale
